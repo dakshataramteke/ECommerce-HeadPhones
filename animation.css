@@ -1,0 +1,43 @@
+/* For Rectangle  */
+@keyframes animationframesone{
+    0%{
+        transform: translate(0,0) rotate(0deg);
+    }
+    20%{
+        transform: translate(4.5625rem, -0.0625rem) rotate(36deg);
+    }
+    40%{
+        transform: translate(8.8125rem, 4.5rem) rotate(72deg);
+    }
+    60%{
+        transform: translate(5.1875rem, 7.625rem) rotate(108deg);
+    }
+    80%{
+        transform: translate(-2.5rem, 4.5rem ) rotate(144deg);
+    }
+    100%{
+        transform: translate(0,0) rotate(0deg);
+    }
+}
+
+/* For Circle  */
+@keyframes animationframesthree{
+    0%{
+        transform: translate(0,0) rotate(0deg) scale(1.2);
+    }
+    20%{
+        transform: translate(4.5625rem, -0.0625rem) rotate(36deg) scale(0.5);
+    }
+    40%{
+        transform: translate(8.8125rem, 4.5rem) rotate(72deg) scale(1);
+    }
+    60%{
+        transform: translate(5.1875rem, 7.625rem) rotate(108deg) scale(1.2);
+    }
+    80%{
+        transform: translate(-2.5rem, 4.5rem ) rotate(144deg) scale(0.5);
+    }
+    100%{
+        transform: translate(0,0) rotate(0deg) scale(1);
+    }
+}

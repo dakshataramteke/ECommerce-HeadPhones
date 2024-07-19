@@ -1,0 +1,385 @@
+@import "animation.css";
+
+*, *:after , *:before{
+    -webkit-box-sizing: border-box; /* Browser par support hai chrome and safari */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:active,:hover,:focus{
+    outline: 0 !important;
+    outline-offset: 0;
+}
+a, a:hover{
+    text-decoration: none;
+}
+a:hover{
+    color: var(--primary-color);
+}
+ul, ol{
+    margin: 0;
+    padding: 0;
+}
+/* Variable Define  */
+:root{
+    --primary-color:#fd8eaf;
+    --white-color:#fff;
+    --text-color:#9e9999;
+    --black-color: #000;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "ubuntu", sans-serif;
+    font-size: 100%;
+    font-weight: 400;
+}
+
+/* === CUstom ScrollBar ====  */
+::-webkit-scrollbar{
+    width: 0.625rem;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--white-color);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+}
+
+/* Custom CSS Design  */
+
+h1{
+    font-size: 6.25rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+h1 span{
+    color: var(--white-color);
+}
+h2{
+    font-weight: 700;
+    position: relative;
+    font-size: 2.1875rem;
+    text-transform: capitalize;
+    color: var(--black-color);
+    line-height: 3.7rem;
+}
+h2::before{
+    background-color:#ef6d9f;
+    border-radius: 0.3125rem;
+    content: "";
+    position: absolute;
+    top: -1.5625rem;
+    left: 0;
+    width: 1.875rem;
+    height: 0.3125rem;
+}
+h4{
+    color: var(--black-color);
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin-bottom: 0.9275rem;
+    transition: all .3s linear;
+}
+h5{
+    color: var(--black-color);
+    text-transform: capitalize;
+    font-family: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+p{
+    font-size: 1.125rem;
+    color: var(--text-color);
+    font-weight: 400;
+    line-height: 1.75rem;
+    letter-spacing: 0.0625rem;
+}
+.main_btn{
+    width: 9.375rem;
+    height: 3.125rem;
+    border: 0.063rem solid var(--primary-color);
+    color: var(--black-color);
+    font-size: 1.125rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    transition: 0.3s;  /* hover ki smoothness */
+}
+/* Under line before after se bani hai  */
+.main_btn::before, .main_btn::after{
+    position: absolute;
+    background-color: var(--white-color);
+    z-index: -1;
+    transition: 0.3s;
+    content: "";
+}
+.main_btn::before{
+    height: 3.125rem;
+    width: 8.125rem;
+}
+.main_btn::after{
+    width: 9.375rem;
+    height: 1.875rem;
+}
+.noselect{
+-webkit-user-select: none;
+-khtml-user-select:none;
+-moz-user-select:none;
+user-select: none;
+
+}
+.main_btn:hover::before{
+    width: 0px;
+    background-color: var(--white-color);
+}
+.main_btn:hover::after{
+    height: 0px;
+    background-color: var(--white-color);
+}
+.main_btn:hover{
+    background-color: var(--white-color);
+    color: var(--primary-color);
+}
+.wrapper{
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+}
+.text-content{
+    width: 60%;
+    margin: auto;
+}
+
+/* Header Design  */
+.navigation_wrap{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-out;
+}
+.navigation_wrap .nav-item{
+padding: 0 0.5rem;
+transition: all 200ms linear;
+}
+.navbar-toggler:focus{
+    outline: none;
+    border: unset;
+    box-shadow: none;
+}
+.nav-link{
+    padding-top: 0.9375rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: var(--white-color);
+    letter-spacing: 0.0625rem;
+}
+.nav-link:hover{
+    color: var(--primary-color);
+}
+.nav-link.active {
+    color: var(--primary-color)
+  }
+.navigation_wrap .main_btn{
+    color: var(--white-color);
+    margin: auto;
+}
+.navigation_wrap .main_btn:hover{
+    background-color: transparent;
+}
+.navigation_wrap .main_btn::before
+.navigation_wrap .main_btn::after{
+    background-color: transparent;
+}
+
+/* Change navbar styling on scroll  */
+.navigation_wrap.scroll-on{
+    position: fixed;
+    background-color: var(--black-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0.125rem 1.75rem 0 rgba(0,0,0,0.09);
+    transition: all .15s ease-in-out 0s;
+
+}
+.navigation_wrap.scroll-on .nav-link:hover,
+.navigation_wrap.scroll-on .nav-link:active{
+    color: var(--primary-color)!important;
+}
+.navigation_wrap.scroll-on .main_btn{
+    color: var(--white-color);
+    margin: auto;
+}
+.navigation_wrap.scroll-on .main_btn:hover{
+    background-color: transparent;
+}
+.navigation_wrap.scroll-on .main_btn::before,
+.navigation_wrap.scroll-on .main_btn::after{
+    background-color: var(--black-color);
+}
+/* top Banner Design  */
+.hero_slider .carousel-caption{
+    text-align: left;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    transform: translate(-75%, -35%);
+    max-width: 1320px;
+}
+.hero_slider .carousel-caption h2{
+    color: var(--white-color);
+}
+.hero_slider .carousel-caption p{
+    color: var(--white-color);
+}
+
+/* About Section  */
+.about_section .carousel-inner{
+border-radius: 0 0 5rem;
+}
+.about_section .main_btn span,
+.style-section .main-btn span{
+color: var(--black-color);
+}
+.about_section .carousel-indicators{
+    margin-bottom: -2.5rem;
+}
+.about_section .carousel-indicators [data-bs-target]{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+/* Rectangle & Circle Shapes  */
+.rectangle-shape, 
+.circle-shape{
+    content: "";
+    border: 0.25rem solid;
+    border-bottom-color:#ef6d9f ;
+    border-right-color: #ef6d9f;
+    border-top-color: #ee8d6d;
+    border-left-color: #ee8d6d;
+    background-image: -moz-linear-gradient(top,#ee8d6d 0% #ef6d9f 100%);  /* Firefox */
+    background-image: -webkit-linear-gradient(top,#ee8d6d 0% #ef6d9f 100%); /* chrome & safari */
+    background-image: linear-gradient(to bottom,#ee8d6d 0% #ef6d9f 100%);  
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled='false', startColorstr=#550000FF, endColorstr=#55FFFF00);
+    background-size: 100% 0;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    margin: auto;
+}
+.rectangle-shape.small,
+.circle-shape.small{
+    border-width: 0.1875rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    animation: animationframesone 35s alternate infinite linear;
+}
+.rectangle-shape.large,
+.circle-shape.large{
+    width: 2.5rem;
+    height: 2.5rem;
+    animation: animationframesthree 35s alternate infinite linear;
+}
+.circle-shape.large{
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    opacity: 0.5;
+}
+.rectangle-shape.small{
+    left: 0;
+    bottom: 10%;
+
+}
+.rectangle-shape{
+    border-radius: 0.1875rem;
+}
+.circle-shape{
+    border-radius: 50%;
+}
+
+/* Features Section Design  */
+.features .card{
+    cursor: pointer;
+}
+.features .card .icon{
+    box-shadow: 0.0625rem 0.25rem 1.25rem rgb(26 26 26 / 9%);
+    border-radius: 0;
+    padding: 1.25rem 0;
+    width: 5rem;
+    text-align: center;
+    height: auto;
+    margin-bottom: 2.5rem;
+    border-top-right-radius: 1.5625rem;
+}
+.features .card img{
+    display: block;
+    opacity: 0.75;
+    margin: 0 auto;
+    filter: brightness(0);
+}
+.features .card:hover .icon img{
+    filter: brightness(1);
+}
+.features .card:hover h4{
+    color: var(--primary-color);
+}
+ /* Choose Section Design  */
+ .choose h2:before,
+ .contacts-section h2:before{
+    left: 47%;
+ }
+ .choose .card .product_star{
+color: var(--text-color);
+font-size: 100%
+ }
+ .choose .card a h4{
+    color:#1a1a1a;
+    display: inline-block;
+    font-size: 1.5rem;
+    width: 100%;
+    font-weight: 500;
+    margin: 0 0 0.93rem;
+    line-height: normal;
+ }
+ .choose .card:hover a h4{
+    color: var(--primary-color);
+ }
+ .choose .card .product_img{
+    width: 100%;
+    height: 21.125rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: all 0.3s;
+ }
+ .choose .card:hover .product_img{
+    transition: all 0.3s;
+    transform: scale(1.1);
+ }
+#zoom_img{
+    background-image: url("./images/img/Product1.jpg");
+}
+#zoom_img-1{
+    background-image: url("./images/img/Product2.jpg");
+}
+#zoom_img-2{
+    background-image: url("./images/img/Product3.jpg");
+}
