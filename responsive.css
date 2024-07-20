@@ -63,8 +63,12 @@
     #zoom_img,
     #zoom_img-1,
     #zoom_img-2{
-        height: 220px;
+        height: 300px;
     }
+    /* contact us  */
+    form input [type=text]{
+        margin-bottom: 1rem !important;
+       }
 }
 
 @media (max-width:767px){
@@ -102,8 +106,26 @@
     .about-section .carousel-inner{
         border-radius:  0 0 1.875rem;
     }
-    /* Headphones  */
-
+    /* Contact us  */
+    form input[type=email],
+    form input [type=text],
+    .subscribe{
+        padding: 0 0.625rem;
+        font-size: 0.875rem;
+        text-align: center;
+    }
+   form .form-group,
+   form input[type=text]{
+    margin: 0 0 1rem;
+    width: 100%;
+   }
+   form .form-group{
+    white-space: nowrap;
+   }
+   form input[type=email]{
+    width: 50%;
+   }
+  
 }
 
 @media (max-width:430px){
